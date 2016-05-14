@@ -8,11 +8,11 @@ namespace TestJobs
     [TestClass]
     public class TestJobsandQueue
     {
+        static object _pendingJobsLock = new object();
 
         [TestMethod]
         public void SimpleJobQueueTest()
         {
-           
             QueueOfJobs pendingJobQueue = SetupTestJobQueue();
 
             // Refactor the thread setups outside the test...
@@ -23,7 +23,20 @@ namespace TestJobs
             {
                 while (pendingJobQueue.JobsQueue.Count > 0)
                 {
-                    pendingJobQueue.JobsQueue.Dequeue().Process();
+                    Job jobToProcess = null;
+
+                    lock (pendingJobQueue)
+                    {
+                        if (pendingJobQueue.JobsQueue.Count > 0)
+                        {
+                            jobToProcess = pendingJobQueue.JobsQueue.Dequeue();
+                        }  
+                    }
+
+                    if (jobToProcess != null)
+                    {
+                        jobToProcess.Process();
+                    }
                 }
             };
 
@@ -41,7 +54,7 @@ namespace TestJobs
                 thread.Join();
             }
 
-            Assert.IsFalse(queueProcessingThreads.Length == 0);
+            Assert.IsTrue(pendingJobQueue.JobsQueue.Count == 0);
         }
 
 
