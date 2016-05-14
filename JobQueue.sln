@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobQueue", "JobQueue\JobQue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestJobs", "TestJobs\TestJobs.csproj", "{FCD54B31-01AC-4AA5-9903-FE573C1FC833}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetConcurrency", "NetConcurrency\NetConcurrency.csproj", "{68913FDD-8A91-47BD-8FBD-A9827ACF7587}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCD54B31-01AC-4AA5-9903-FE573C1FC833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCD54B31-01AC-4AA5-9903-FE573C1FC833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCD54B31-01AC-4AA5-9903-FE573C1FC833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68913FDD-8A91-47BD-8FBD-A9827ACF7587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68913FDD-8A91-47BD-8FBD-A9827ACF7587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68913FDD-8A91-47BD-8FBD-A9827ACF7587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68913FDD-8A91-47BD-8FBD-A9827ACF7587}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

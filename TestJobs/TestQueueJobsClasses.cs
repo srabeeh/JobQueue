@@ -11,7 +11,7 @@ namespace TestJobs
         static object _pendingJobsLock = new object();
 
         [TestMethod]
-        public void SimpleJobQueueTest()
+        public void DoubleBlockedThreadingTest()
         {
             QueueOfJobs pendingJobQueue = SetupTestJobQueue();
 
