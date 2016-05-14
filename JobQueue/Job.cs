@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JobQueue
 {
-    class Job
+    public class Job
     {
         private readonly int _jobId;
         private bool _processed;
